@@ -1,0 +1,30 @@
+<% This is a test file for TesLang compiler %>
+fn fact(n as int) <int> {
+    <% Nested comment test %>
+    if [[n < 2]]
+    begin
+        return 1;
+    end
+
+    <% Testing recursive call %>
+    return n * fact(n - 1);
+}
+
+fn testMath(x as int, y as int) <int> {
+    result :: int = 0;
+    
+    <% Testing various operators %>
+    result = (x + y) * 2;
+    result = result / 2;
+    
+    if [[x > y]]
+    begin
+        result = result + 10;
+    end
+    else
+    begin
+        result = result - 5;
+    end
+
+    return result;
+}
