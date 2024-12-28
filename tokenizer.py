@@ -76,7 +76,7 @@ def t_BEGIN(t): r'begin'; return t
 def t_END(t): r'end'; return t
 def t_INT(t): r'int'; return t
 def t_VECTOR(t): r'vector'; return t
-def t_STR(t): r'str'; return t
+def t_STR(t): r'str\b'; return t
 def t_BOOL(t): r'bool'; return t
 def t_NULL(t): r'null'; return t
 def t_BOOLEAN(t):
@@ -101,7 +101,8 @@ def t_NUMBER(t):
 
 def t_STRING(t):
     r'\"([^\\\n]|(\\.))*?\"|\'([^\\\n]|(\\.))*?\''
-    t.value = t.value[1:-1]  # Remove quotes
+    t.value = t.value[1:-1]
+    t.value = t.value.encode().decode('unicode-escape')
     return t
 
 # Track line numbers

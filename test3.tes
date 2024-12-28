@@ -1,0 +1,20 @@
+<% Testing string handling in TesLang %>
+fn stringTest() <void> {
+    str1 :: str = "Hello World!";
+    str2 :: str = 'Testing single quotes';
+    str3 :: str = "Testing \"escape\" sequences";
+    str4 :: str = 'Testing \'escape\' sequences';
+    str5 :: str = '''"as\dfsdf\nryt"''';
+    
+    <% Testing strings in function calls %>
+    print("Direct string literal");
+
+    <% Testing strings with special characters %>
+    special :: str = "!@#$%^&*()_+";
+}
+
+<% Testing empty strings %>
+fn emptyString() <str> {
+    empty :: str = "";
+    return empty;
+}

@@ -2,7 +2,7 @@ import tokenizer
 
 if __name__ == "__main__":
     
-    with open('test2.tes', 'r') as file:
+    with open('test3.tes', 'r') as file:
         data = file.read()
         tokenizer.lexer.input(data)
     
